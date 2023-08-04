@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  app:
+    image: rohwedder/nextjs-weather-app:latest
+    container_name: nextjs-weather-app
+    restart: always
+    ports:
+      - "80:3000"
+    environment:
+      NODE_ENV: production
