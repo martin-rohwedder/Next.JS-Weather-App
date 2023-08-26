@@ -1,7 +1,9 @@
+import ForecastContainer from "@/components/forecast/forecast-container";
+
 function Home() {
   return (
-    <main>
-      <h1>Weather App</h1>
+    <main className="flex-1">
+      <ForecastContainer />
     </main>
   );
 }
