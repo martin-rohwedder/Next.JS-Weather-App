@@ -1,3 +1,4 @@
+import ExtraWeatherTodayContainer from "@/components/extra/extra-weather-today-container";
 import ForecastContainer from "@/components/forecast/forecast-container";
 import LocationContainer from "@/components/location/location-container";
 
@@ -7,6 +8,7 @@ function Home() {
       <div className="h-full flex flex-col justify-center items-center">
         <LocationContainer />
         <ForecastContainer />
+        <ExtraWeatherTodayContainer />
       </div>
     </main>
   );
