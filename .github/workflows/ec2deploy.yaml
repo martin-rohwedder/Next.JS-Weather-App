@@ -7,6 +7,7 @@ env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
   AWS_PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY }}
+  WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +28,8 @@ jobs:
           push: true
           dockerfile: ./Dockerfile
           tags: rohwedder/nextjs-weather-app:latest
+          build-args: |
+            "WEATHER_API_KEY=${{ secrets.WEATHER_API_KEY }}"
   deploy:
     needs: build
     runs-on: ubuntu-latest
