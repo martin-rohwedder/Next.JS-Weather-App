@@ -11,6 +11,9 @@ RUN npm install --omit=dev --frozen-lockfile
 
 COPY . .
 
+ARG WEATHER_API_KEY
+ENV WEATHER_API_KEY ${WEATHER_API_KEY}
+
 RUN npm run build
 
 FROM ${NODE} as runner
@@ -22,6 +25,9 @@ WORKDIR /app
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+
+ARG WEATHER_API_KEY
+ENV WEATHER_API_KEY ${WEATHER_API_KEY}
 
 EXPOSE 3000
 
