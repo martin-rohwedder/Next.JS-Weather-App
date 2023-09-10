@@ -31,7 +31,6 @@ function Home(props) {
   if (isLoading && !forecast) {
     return <h1>Indlæser vejrdata...</h1>;
   } else {
-    console.log(forecast);
     return (
       <main className="flex-1">
         <div className="h-full flex flex-col justify-center items-center">
