@@ -1,6 +1,8 @@
 import ForecastCard from "./forecast-card";
 
-function ForecastContainer() {
+function ForecastContainer(props) {
+  const { list } = props.forecast;
+
   function getWeekday({ daysInFuture }) {
     const dateInFuture = new Date();
     dateInFuture.setDate(dateInFuture.getDate() + daysInFuture);
@@ -20,22 +22,27 @@ function ForecastContainer() {
         <ForecastCard
           hasVerticalLine={true}
           weekday={getWeekday({ daysInFuture: 0 })}
+          weatherData={list[0]}
         />
         <ForecastCard
           hasVerticalLine={true}
           weekday={getWeekday({ daysInFuture: 1 })}
+          weatherData={list[8]}
         />
         <ForecastCard
           hasVerticalLine={true}
           weekday={getWeekday({ daysInFuture: 2 })}
+          weatherData={list[16]}
         />
         <ForecastCard
           hasVerticalLine={true}
           weekday={getWeekday({ daysInFuture: 3 })}
+          weatherData={list[24]}
         />
         <ForecastCard
           hasVerticalLine={false}
           weekday={getWeekday({ daysInFuture: 4 })}
+          weatherData={list[32]}
         />
       </div>
     </section>

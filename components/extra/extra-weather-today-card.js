@@ -1,4 +1,5 @@
 import Image from "next/image";
+import arrowUpImage from "@/public/images/weather/icons/arrow-up.svg";
 
 function ExtraWeatherTodayCard(props) {
   const { id, title, image, text, rotationDegree, sunriseTime, sunsetTime } =
@@ -9,7 +10,7 @@ function ExtraWeatherTodayCard(props) {
       <div className="h-full flex flex-col items-center justify-center">
         <p className="text-lg font-bold capitalize">{title}</p>
         <Image
-          src={`/images/weather/icons/${image}`}
+          src={image}
           alt={id}
           width={64}
           height={64}
@@ -20,17 +21,12 @@ function ExtraWeatherTodayCard(props) {
         {id === "sol" ? (
           <div className="w-full flex justify-evenly items-center">
             <div className="flex">
-              <Image
-                src={`/images/weather/icons/arrow-up.svg`}
-                alt={id}
-                width={20}
-                height={20}
-              />
+              <Image src={arrowUpImage} alt={id} width={20} height={20} />
               <span className="font-medium">{sunriseTime}</span>
             </div>
             <div className="flex">
               <Image
-                src={`/images/weather/icons/arrow-up.svg`}
+                src={arrowUpImage}
                 alt={id}
                 width={20}
                 height={20}
